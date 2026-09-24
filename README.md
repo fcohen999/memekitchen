@@ -34,4 +34,4 @@ Search the code for `TODO` to find each one.
 3. **Party inquiry form**: `action` is a placeholder. Connect it to a form service you control.
 4. **Mailing list form**: same as above.
 5. **Resy widget**: venue ID `45003` and the API key were copied from the old site. Confirm with Resy they're yours before going live. (The Book a Table buttons link to the Resy URL you gave and work now.)
-6. **West Village and ADA pages**: the footer and hero link to `west-village.html` and `accessibilityada.html` on the current mememediterranean.com. Those pages aren't part of this rebuild yet.
+6. **ADA page**: the hero and footer link to `accessibilityada.html` on the current mememediterranean.com. That page isn't part of this rebuild yet.

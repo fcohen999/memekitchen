@@ -308,21 +308,6 @@ a {
   max-width: 100%;
   margin: 0 auto 30px;
   opacity: 0.8;
-  transition: opacity 0.3s;
-}
-
-.footer-logo:hover {
-  opacity: 1;
-}
-
-.footer-location {
-  display: inline-block;
-  font-size: 12px;
-  opacity: 0.75;
-}
-
-.footer-location:hover {
-  opacity: 1;
 }
 
 .site-footer .social {
@@ -331,11 +316,6 @@ a {
 
 .site-footer a:hover {
   color: var(--black);
-}
-
-.site-footer .footer-location:hover,
-.site-footer .social a:hover {
-  color: var(--white);
 }
 
 .footer-legal {
