@@ -1,0 +1,99 @@
+/* ==========================================================================
+   Menu pages (lunch.html, dinner.html, brunch.html)
+   Blue page background, a white 1024px column, a photo banner on top,
+   then the menu text centered in the column.
+   ========================================================================== */
+
+body.menu-page {
+  background: var(--blue);
+}
+
+.menu-sheet {
+  max-width: 1024px;
+  margin: 0 auto;
+  background: var(--white);
+}
+
+.menu-banner {
+  height: 689px;
+  background: #222 no-repeat center / cover;
+}
+
+.menu-banner--lunch { background-image: url("../images/07.jpg"); }
+.menu-banner--dinner { background-image: url("../images/08hk.jpg"); background-position: center bottom; }
+.menu-banner--brunch { background-image: url("../images/brunch2.jpg"); }
+
+.menu-body {
+  padding: 47px 20px 80px;
+  text-align: center;
+}
+
+.menu-title {
+  font-size: 30px;
+  line-height: 34px;
+  letter-spacing: 3px;
+  color: var(--blue);
+}
+
+.menu-body .ornament {
+  width: 101px;
+  height: 31px;
+  margin-top: 11px;
+  opacity: 0.39;
+}
+
+.menu-content {
+  max-width: 808px;
+  margin: 21px auto 0;
+  font-size: 12px;
+  line-height: 19px;
+  color: var(--text);
+}
+
+.menu-section + .menu-section {
+  margin-top: 38px;
+}
+
+.menu-section-title {
+  margin-bottom: 19px;
+  font-size: 13px;
+  color: var(--blue);
+}
+
+.menu-item {
+  margin-bottom: 19px;
+}
+
+.menu-item p {
+  margin: 0;
+}
+
+/* A "note" line sits directly under the item above it */
+.menu-note {
+  margin: -19px 0 19px;
+}
+
+.menu-footnote {
+  margin-top: 38px;
+}
+
+/* Brunch uses slightly larger type on the original site */
+.menu-content--brunch {
+  max-width: 985px;
+  font-size: 13px;
+  line-height: 22px;
+}
+
+.menu-content--brunch .menu-item {
+  margin-bottom: 22px;
+}
+
+.menu-content--brunch .menu-note {
+  margin: -22px 0 22px;
+}
+
+@media (max-width: 768px) {
+  .menu-banner {
+    height: 320px;
+  }
+}

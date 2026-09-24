@@ -1,0 +1,610 @@
+/* ==========================================================================
+   Homepage (index.html) sections, in page order.
+   ========================================================================== */
+
+/* ---------- Hero ---------- */
+
+.hero {
+  position: relative;
+  min-height: 1209px;
+  padding: 170px 20px 57px;
+  background: var(--black);
+  color: var(--white);
+  clip-path: inset(0); /* keeps the fixed slideshow inside the hero */
+}
+
+.slideshow {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.slide.is-active {
+  opacity: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  width: 749px;
+  max-width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.hero-logo {
+  display: block;
+  width: 100%;
+}
+
+.hero-logo img {
+  width: 100%;
+  height: auto;
+}
+
+.hero-location {
+  margin: -3px 0 0 198px;
+  width: 452px;
+  font-size: 25px;
+  line-height: 30px;
+  letter-spacing: 5px;
+  text-align: right;
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  margin-top: 40px;
+}
+
+.hero .social {
+  margin-top: 40px;
+}
+
+.hero-rule {
+  width: 709px;
+  max-width: 100%;
+  margin: 18px auto 0;
+  border: 0;
+  border-top: 1px solid var(--white);
+}
+
+.hero-contact {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px 40px;
+  margin-top: 16px;
+  font-size: 11px;
+  line-height: 19px;
+  text-transform: uppercase;
+}
+
+.hero-contact a {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: opacity 0.3s;
+}
+
+.hero-contact a:hover {
+  opacity: 0.4;
+}
+
+.hero-ada {
+  display: inline-block;
+  margin-top: 40px;
+  opacity: 0.7;
+  transition: opacity 1s ease-out;
+}
+
+.hero-ada:hover {
+  opacity: 1;
+}
+
+/* ---------- About ---------- */
+
+.about-text {
+  text-align: justify;
+}
+
+.about-text p + p {
+  margin-top: 23px;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px 40px;
+  max-width: 808px;
+  margin: 30px auto 0;
+  text-align: left;
+  line-height: 23px;
+}
+
+.info-title {
+  color: var(--blue);
+  text-transform: uppercase;
+}
+
+/* ---------- Menus ---------- */
+
+.menu-tiles {
+  display: grid;
+  grid-template-columns: repeat(2, 320px);
+  justify-content: center;
+  gap: 23px;
+  margin-top: 30px;
+}
+
+.menu-tile {
+  display: block;
+  height: 146px;
+  background: #555 no-repeat left top / cover;
+}
+
+.menu-tile span {
+  display: block;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.16);
+  font-size: 23px;
+  line-height: 146px;
+  letter-spacing: 2px;
+  color: var(--white);
+  transition: background-color 0.3s;
+}
+
+.menu-tile:hover span {
+  background: transparent;
+}
+
+.menu-tile--lunch { background-image: url("../images/hklunchmenu.jpg"); }
+.menu-tile--dinner { background-image: url("../images/hkdinnermenu.jpg"); }
+.menu-tile--brunch { background-image: url("../images/hkbrunchmenu2.jpg"); background-position: center bottom; }
+.menu-tile--order { background-image: url("../images/hkordermenu.jpg"); }
+
+/* ---------- Reservations ---------- */
+
+.reservations .section-text {
+  color: var(--white);
+  line-height: 20px;
+}
+
+.reservations-row {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.reservations-art {
+  width: 214px;
+  height: 173px;
+  background: url("../images/dinnerdelivery.png") no-repeat 0 0 / contain;
+}
+
+.resy-widget {
+  width: 258px;
+  min-height: 60px;
+}
+
+.resy-widget a {
+  color: var(--white);
+}
+
+/* ---------- Our Cuisine (gallery) ---------- */
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px;
+  max-width: 801px;
+  margin: 21px auto 0;
+}
+
+.gallery-item {
+  position: relative;
+  display: block;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  cursor: pointer;
+  background: none;
+}
+
+.gallery-item img {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
+
+.gallery-item::after {
+  content: "+";
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: rgba(0, 0, 0, 0.5);
+  font-size: 28px;
+  color: var(--white);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.gallery-item:hover::after {
+  opacity: 1;
+}
+
+/* Lightbox */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.9);
+}
+
+.lightbox.is-open {
+  display: flex;
+}
+
+.lightbox img {
+  max-width: 90vw;
+  max-height: 85vh;
+}
+
+.lightbox button {
+  position: absolute;
+  border: 0;
+  background: none;
+  color: var(--white);
+  font: 300 40px/1 var(--font);
+  cursor: pointer;
+  padding: 16px;
+  opacity: 0.8;
+}
+
+.lightbox button:hover {
+  opacity: 1;
+}
+
+.lightbox-close { top: 10px; right: 20px; }
+.lightbox-prev { left: 10px; top: 50%; transform: translateY(-50%); }
+.lightbox-next { right: 10px; top: 50%; transform: translateY(-50%); }
+
+.lightbox-counter {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  color: var(--white);
+  font-size: 14px;
+}
+
+/* ---------- Events & Specials ---------- */
+
+.events-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 400px);
+  justify-content: center;
+  gap: 0 87px;
+  margin-top: 30px;
+}
+
+.event-title {
+  font-size: 17px;
+  line-height: 34px;
+  letter-spacing: 2px;
+  color: var(--blue);
+  margin-bottom: 6px;
+}
+
+.event-image {
+  display: block;
+  height: 145px;
+  background: #555 no-repeat center / cover;
+}
+
+.event-image--dining { background-image: url("../images/out.jpg"); background-position: right center; }
+.event-image--delivery { background-image: url("../images/lunch.jpg"); }
+.event-image--brunch { background-image: url("../images/runchmenu.jpg"); }
+
+.event-caption {
+  font-size: 12px;
+  line-height: 30px;
+  color: var(--black);
+  margin-top: 6px;
+}
+
+.event-single {
+  width: 400px;
+  max-width: 100%;
+  margin: 25px auto 0;
+}
+
+.event-single .event-title {
+  letter-spacing: 1px;
+}
+
+/* ---------- Gift Cards ---------- */
+
+.giftcards .section-title {
+  letter-spacing: 2px;
+}
+
+.giftcard-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  margin-top: 30px;
+}
+
+.giftcard-image {
+  width: 405px;
+  height: 258px;
+  background: url("../images/giftcard-meme.png") no-repeat 0 0 / contain;
+}
+
+.giftcard-actions {
+  width: 399px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 17px;
+}
+
+.giftcard-amount {
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: 2px;
+}
+
+.giftcard-note {
+  max-width: 959px;
+  margin: 41px auto 0;
+  font-size: 10px;
+  line-height: 17px;
+  color: #5e0d1a;
+}
+
+/* ---------- Forms (party inquiry + mailing list) ---------- */
+
+.form {
+  max-width: 820px;
+  margin: 26px auto 0;
+  text-align: left;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.field label {
+  display: block;
+  margin: 0 0 4px 4px;
+  font-size: 12px;
+  line-height: 20px;
+  color: var(--black);
+}
+
+.field input,
+.field textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--blue);
+  border-radius: 5px;
+  background: var(--white);
+  font: 300 12px var(--font);
+  color: var(--black);
+  transition: box-shadow 1s ease-out;
+}
+
+.field textarea {
+  min-height: 110px;
+  resize: vertical;
+}
+
+.field input:hover,
+.field textarea:hover {
+  box-shadow: 0 0 4px rgba(29, 113, 184, 0.5);
+  transition-duration: 0s;
+}
+
+.field input:focus,
+.field textarea:focus {
+  outline: none;
+  box-shadow: 0 0 8px rgba(29, 113, 184, 0.5);
+}
+
+.form-submit {
+  display: block;
+  width: 100%;
+  max-width: 200px;
+  margin: 10px auto 0;
+  padding: 0;
+  border: 1px solid var(--blue);
+  border-radius: 6px;
+  background: var(--blue);
+  font: 300 12px/34px var(--font);
+  color: var(--white);
+  cursor: pointer;
+  transition: background-color 0.6s ease-out;
+}
+
+.form-submit:hover {
+  background: var(--white);
+  color: var(--blue);
+}
+
+.form--mailing .form-row {
+  grid-template-columns: 1fr 1fr auto;
+  align-items: end;
+}
+
+.form--mailing .form-submit {
+  margin: 0;
+  width: 120px;
+}
+
+.form--mailing .form-submit:hover {
+  border-color: #bf1111;
+  background: #bf1111;
+  color: var(--white);
+}
+
+/* ---------- Contact ---------- */
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  max-width: 808px;
+  margin: 30px auto 0;
+  line-height: 20px;
+}
+
+.contact-grid a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  color: var(--text);
+  transition: color 0.3s;
+}
+
+.contact-grid a:hover {
+  color: var(--blue);
+}
+
+.contact-icon {
+  width: 56px;
+  height: 68px;
+  background: no-repeat center bottom / contain;
+}
+
+.contact-icon--map { background-image: url("../images/map.png"); }
+.contact-icon--phone { background-image: url("../images/mobile.png"); }
+.contact-icon--email { background-image: url("../images/envelope.png"); }
+
+.mailing-title {
+  margin-top: 34px;
+  font-size: 30px;
+  line-height: 36px;
+  letter-spacing: 4px;
+  color: var(--blue);
+}
+
+.map iframe {
+  display: block;
+  width: 100%;
+  height: 450px;
+  border: 0;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 1024px) {
+  .hero {
+    min-height: 100vh;
+    padding-top: 110px;
+  }
+
+  .photo-band {
+    height: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-location {
+    width: auto;
+    margin: 10px 0 0;
+    text-align: center;
+    font-size: 20px;
+  }
+
+  .hero-buttons,
+  .reservations-row,
+  .giftcard-row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .info-grid,
+  .contact-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .menu-tiles,
+  .events-grid {
+    grid-template-columns: minmax(0, 320px);
+  }
+
+  .events-grid > div + div {
+    margin-top: 25px;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .giftcard-image {
+    width: 100%;
+    max-width: 405px;
+    height: auto;
+    aspect-ratio: 405 / 258;
+  }
+
+  .giftcard-actions {
+    width: 100%;
+  }
+
+  .form--mailing .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .form--mailing .form-submit {
+    width: 100%;
+    max-width: 200px;
+    margin: 0 auto;
+  }
+
+  .photo-band {
+    height: 280px;
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .section-title,
+  .mailing-title {
+    font-size: 24px;
+  }
+
+  .btn,
+  .btn--solid {
+    min-width: 0;
+    width: 100%;
+    max-width: 288px;
+  }
+}
