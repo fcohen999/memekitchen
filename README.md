@@ -25,16 +25,6 @@ Open the file in `menus/`, find the dish, and change the text between the quotes
 
 Copy a line to add a dish, delete a line to remove one. Keep the commas between lines.
 
-## Images still missing
-
-The saved copy of the old site didn't include these, so those spots show a dark or empty placeholder. Put files with these exact names into `images/` and they'll appear automatically:
-
-- Photo bands between sections: `hk_aboutuspara.jpg`, `food2para.jpg`, `hk_reservationspara.jpg`, `hk_ourcuisinepara.jpg`, `hk_partypara.jpg`, `au8i4814.jpg`, `hkordermenu2.jpg`, `hk_contactpara.jpg`
-- Homepage menu buttons: `hklunchmenu.jpg`, `hkdinnermenu.jpg`, `hkbrunchmenu2.jpg`, `hkordermenu.jpg`
-- Events section: `out.jpg`, `lunch.jpg`, `runchmenu.jpg`
-- Menu page banners: `07.jpg` (lunch), `08hk.jpg` (dinner), `brunch2.jpg` (brunch)
-- Other: `giftcard-meme.png`, `dinnerdelivery.png` (reservations), `rollbluem.png` and `rollwhitem.png` (small "m" ornament under headings), `map.png`, `mobile.png`, `envelope.png` (contact icons), `favicon.ico`
-
 ## Open TODOs
 
 Search the code for `TODO` to find each one.
