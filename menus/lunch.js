@@ -67,14 +67,6 @@ window.MENU = {
         { name: "BRANZINO LIMON", description: "Olive oil, rosemary, garlic, squash, asparagus cauliflower, fingerling potatoes 30" },
         { name: "SHAWARMA ROYALE: LAMB, FILET MIGNON & CHICKEN 28", description: "Moroccan spices, amba, tahini, pickled eggplant, black lentil & tabouli" },
         { name: "CHICKEN TAGINE", description: "Apricot, raisins, almonds, couscous and spicy carrots 26" },
-        { name: "SEAFOOD LINGUINE", description: "Scallops, shrimp, mussels, fresh tomato, garlic, basil, jalepeño 27" },
-        // NOTE: the live site lists the entrées below a second time. Copied as-is; delete this block to remove the repeat.
-        { name: "MUSHROOM RAVIOLI", description: "Portobello mushroom, walnuts, parmesan 24" },
-        { name: "CHICKEN KEBAB", description: "Hummus, chopped salad, cucumber yogurt, basmati rice 22" },
-        { name: "PAN ROASTED ORGANIC SALMON", description: "Saffron risotto, asparagus, julienne vegetables, tomato 30" },
-        { name: "BRANZINO LIMON", description: "Olive oil, rosemary, garlic, squash, asparagus cauliflower, fingerling potatoes 30" },
-        { name: "SHAWARMA ROYALE: LAMB, FILET MIGNON and CHICKEN 28", description: "Moroccan spices, amba, tahini, pickled eggplant, black lentil and tabouli" },
-        { name: "CHICKEN TAGINE", description: "Apricot, raisins, almonds, couscous and spicy carrots 26" },
         { name: "SEAFOOD LINGUINE", description: "Scallops, shrimp, mussels, fresh tomato, garlic, basil, jalepeño 27" }
       ]
     }
