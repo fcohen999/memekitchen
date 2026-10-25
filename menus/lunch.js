@@ -2,7 +2,7 @@
  * LUNCH MENU — edit this file to change the Lunch page (lunch.html).
  *
  * How it works:
- *   sections  -> each block with a blue heading (e.g. "TAPAS")
+ *   sections  -> each block with a small basil heading (e.g. "TAPAS")
  *   items     -> each dish. "name" is the first line, "description" the second.
  *                Prices are written into the text exactly as they should appear.
  *   note      -> a single extra line under an item (e.g. "add merguez sausage 6").

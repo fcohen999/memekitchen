@@ -210,10 +210,10 @@ a {
 .photo-band--menus { background-image: url("../images/food2para.jpg"); background-position: center bottom; }
 .photo-band--reservations { background-image: url("../images/hk_reservationspara.jpg"); }
 .photo-band--cuisine { background-image: url("../images/hk_ourcuisinepara.jpg"); background-position: center bottom; }
-.photo-band--party { background-image: url("../images/hk_partypara.jpg"); }
+.photo-band--party { background-image: url("../images/gallery/3.jpg"); }
 .photo-band--giftcards { background-image: url("../images/au8i4814.jpg"); }
 .photo-band--order { background-image: url("../images/hkordermenu2.jpg"); }
-.photo-band--contact { background-image: url("../images/hk_contactpara.jpg"); }
+.photo-band--contact { background-image: url("../images/gallery/4.jpg"); }
 
 /* ---------- Navigation (fixed, top right) ---------- */
 
