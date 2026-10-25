@@ -1,22 +1,56 @@
 /* ==========================================================================
    Menu pages (lunch.html, dinner.html, brunch.html)
-   Blue page background, a white 1024px column, a photo banner on top,
-   then the menu text centered in the column.
+   Follows the brand kit menu page: one-line header (wordmark and "on 10" in
+   basil, tagline in charcoal), dishes grouped under small headings, no divider
+   lines, dish names in Jost caps, descriptions in Bodoni Moda, prices in basil.
    ========================================================================== */
 
 body.menu-page {
-  background: var(--blue);
+  background: var(--cream);
+}
+
+/* The nav button sits over the paper header here, so give it a charcoal backing */
+.menu-page .nav-toggle {
+  background-color: var(--charcoal-menu);
 }
 
 .menu-sheet {
   max-width: 1024px;
   margin: 0 auto;
-  background: var(--white);
+  background: var(--paper);
+}
+
+/* One-line header row */
+.menu-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+  padding: 36px 64px 28px;
+}
+
+.menu-header-logo {
+  display: block;
+  width: 300px;
+  max-width: 100%;
+}
+
+.menu-header-logo .logo {
+  fill: var(--basil);
+}
+
+.menu-header-tagline {
+  font-family: var(--sans);
+  font-size: 18px;
+  line-height: 1.3;
+  letter-spacing: 0.24em;
+  color: var(--charcoal);
 }
 
 .menu-banner {
-  height: 689px;
-  background: #222 no-repeat center / cover;
+  height: 560px;
+  background: var(--charcoal) no-repeat center / cover;
 }
 
 .menu-banner--lunch { background-image: url("../images/07.jpg"); }
@@ -24,76 +58,145 @@ body.menu-page {
 .menu-banner--brunch { background-image: url("../images/brunch2.jpg"); }
 
 .menu-body {
-  padding: 47px 20px 80px;
+  padding: 56px 64px 88px;
+}
+
+.menu-intro {
   text-align: center;
 }
 
 .menu-title {
-  font-size: 30px;
-  line-height: 34px;
-  letter-spacing: 3px;
-  color: var(--blue);
-}
-
-.menu-body .ornament {
-  width: 101px;
-  height: 31px;
-  margin-top: 11px;
-  opacity: 0.39;
+  font-family: var(--serif);
+  font-weight: 500;
+  font-variation-settings: "opsz" 6;
+  font-size: 48px;
+  line-height: 1.1;
+  text-transform: lowercase;
+  color: var(--charcoal);
 }
 
 .menu-content {
-  max-width: 808px;
-  margin: 21px auto 0;
-  font-size: 12px;
-  line-height: 19px;
-  color: var(--text);
+  margin-top: 48px;
+  columns: 2;
+  column-gap: 48px;
+  text-align: left;
 }
 
-.menu-section + .menu-section {
-  margin-top: 38px;
+.menu-section {
+  break-inside: avoid-column;
+  margin-bottom: 44px;
+}
+
+/* Long sections may flow into the next column */
+.menu-section--long {
+  break-inside: auto;
 }
 
 .menu-section-title {
-  margin-bottom: 19px;
-  font-size: 13px;
-  color: var(--blue);
+  margin-bottom: 18px;
+  font-family: var(--sans);
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.6;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--accent);
 }
 
 .menu-item {
-  margin-bottom: 19px;
+  break-inside: avoid;
+  margin-bottom: 20px;
 }
 
 .menu-item p {
   margin: 0;
 }
 
+.menu-item-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.menu-item-name {
+  font-family: var(--sans);
+  font-weight: 500;
+  font-size: 14.5px;
+  line-height: 1.35;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--charcoal);
+}
+
+.menu-item-description {
+  margin-top: 3px;
+  font-family: var(--serif);
+  font-size: 15px;
+  line-height: 1.45;
+  color: var(--text);
+}
+
+/* Prices: Bodoni Moda, brand color, no currency sign */
+.menu-price {
+  font-family: var(--serif);
+  font-size: 17px;
+  font-weight: 400;
+  letter-spacing: 0;
+  color: var(--accent);
+  font-variant-numeric: lining-nums;
+}
+
+.menu-item-head > .menu-price {
+  flex: none;
+}
+
 /* A "note" line sits directly under the item above it */
 .menu-note {
-  margin: -19px 0 19px;
+  break-inside: avoid;
+  margin: -14px 0 20px;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 15px;
+  line-height: 1.45;
+  color: var(--text);
 }
 
 .menu-footnote {
-  margin-top: 38px;
-}
-
-/* Brunch uses slightly larger type on the original site */
-.menu-content--brunch {
-  max-width: 985px;
-  font-size: 13px;
-  line-height: 22px;
-}
-
-.menu-content--brunch .menu-item {
-  margin-bottom: 22px;
-}
-
-.menu-content--brunch .menu-note {
-  margin: -22px 0 22px;
+  column-span: all;
+  margin-top: 12px;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 14px;
+  text-align: center;
+  color: var(--text);
 }
 
 @media (max-width: 768px) {
+  .menu-header {
+    padding: 84px 20px 22px;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .menu-header-logo {
+    width: 240px;
+  }
+
+  .menu-header-tagline {
+    width: 100%;
+    font-size: 14px;
+  }
+
   .menu-banner {
-    height: 320px;
+    height: 300px;
+  }
+
+  .menu-body {
+    padding: 44px 20px 64px;
+  }
+
+  .menu-content {
+    columns: 1;
   }
 }

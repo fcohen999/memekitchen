@@ -8,8 +8,8 @@
   position: relative;
   min-height: 1209px;
   padding: 170px 20px 57px;
-  background: var(--black);
-  color: var(--white);
+  background: var(--charcoal);
+  color: var(--cream);
   clip-path: inset(0); /* keeps the fixed slideshow inside the hero */
 }
 
@@ -33,6 +33,14 @@
   opacity: 1;
 }
 
+/* Charcoal wash over the photos so the cream logo stays legible */
+.slideshow::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(rgba(43, 39, 36, 0.55), rgba(43, 39, 36, 0.35) 60%, rgba(43, 39, 36, 0.6));
+}
+
 .hero-content {
   position: relative;
   z-index: 1;
@@ -40,25 +48,22 @@
   max-width: 100%;
   margin: 0 auto;
   text-align: center;
+  font-family: var(--sans);
 }
 
 .hero-logo {
   display: block;
-  width: 100%;
-}
-
-.hero-logo img {
-  width: 100%;
-  height: auto;
+  width: 600px;
+  max-width: 100%;
+  margin: 0 auto;
 }
 
 .hero-location {
-  margin: -3px 0 0 198px;
-  width: 452px;
-  font-size: 25px;
-  line-height: 30px;
-  letter-spacing: 5px;
-  text-align: right;
+  margin-top: 22px;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.3em;
+  color: var(--cream);
 }
 
 .hero-buttons {
@@ -77,7 +82,7 @@
   max-width: 100%;
   margin: 18px auto 0;
   border: 0;
-  border-top: 1px solid var(--white);
+  border-top: 1px solid rgba(243, 237, 225, 0.6);
 }
 
 .hero-contact {
@@ -86,8 +91,9 @@
   flex-wrap: wrap;
   gap: 10px 40px;
   margin-top: 16px;
-  font-size: 11px;
+  font-size: 12px;
   line-height: 19px;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
 }
 
@@ -99,7 +105,7 @@
 }
 
 .hero-contact a:hover {
-  opacity: 0.4;
+  opacity: 0.6;
 }
 
 .hero-ada {
@@ -130,12 +136,17 @@
   max-width: 808px;
   margin: 30px auto 0;
   text-align: left;
-  line-height: 23px;
+  line-height: 1.55;
 }
 
 .info-title {
-  color: var(--blue);
+  margin-bottom: 4px;
+  font-family: var(--sans);
+  font-weight: 500;
+  font-size: 12px;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
+  color: var(--accent);
 }
 
 /* ---------- Menus ---------- */
@@ -151,22 +162,24 @@
 .menu-tile {
   display: block;
   height: 146px;
-  background: #555 no-repeat left top / cover;
+  background: var(--charcoal) no-repeat left top / cover;
 }
 
 .menu-tile span {
   display: block;
   height: 100%;
-  background: rgba(0, 0, 0, 0.16);
-  font-size: 23px;
+  background: rgba(43, 39, 36, 0.4);
+  font-family: var(--sans);
+  font-weight: 500;
+  font-size: 18px;
   line-height: 146px;
-  letter-spacing: 2px;
-  color: var(--white);
+  letter-spacing: 0.25em;
+  color: var(--cream);
   transition: background-color 0.3s;
 }
 
 .menu-tile:hover span {
-  background: transparent;
+  background: rgba(86, 96, 60, 0.75);
 }
 
 .menu-tile--lunch { background-image: url("../images/hklunchmenu.jpg"); }
@@ -177,8 +190,7 @@
 /* ---------- Reservations ---------- */
 
 .reservations .section-text {
-  color: var(--white);
-  line-height: 20px;
+  color: var(--cream);
 }
 
 .reservations-row {
@@ -193,6 +205,7 @@
   width: 214px;
   height: 173px;
   background: url("../images/dinnerdelivery.png") no-repeat 0 0 / contain;
+  opacity: 0.9;
 }
 
 .resy-widget {
@@ -201,7 +214,10 @@
 }
 
 .resy-widget a {
-  color: var(--white);
+  color: var(--cream);
+  text-decoration: underline;
+  text-decoration-color: #c9cdb5;
+  text-underline-offset: 3px;
 }
 
 /* ---------- Our Cuisine (gallery) ---------- */
@@ -236,9 +252,10 @@
   inset: 0;
   display: grid;
   place-items: center;
-  background: rgba(0, 0, 0, 0.5);
-  font-size: 28px;
-  color: var(--white);
+  background: rgba(86, 96, 60, 0.6);
+  font-family: var(--sans);
+  font-size: 32px;
+  color: var(--cream);
   opacity: 0;
   transition: opacity 0.25s ease;
 }
@@ -255,7 +272,7 @@
   display: none;
   align-items: center;
   justify-content: center;
-  background: rgba(0, 0, 0, 0.9);
+  background: rgba(43, 39, 36, 0.95);
 }
 
 .lightbox.is-open {
@@ -271,8 +288,8 @@
   position: absolute;
   border: 0;
   background: none;
-  color: var(--white);
-  font: 300 40px/1 var(--font);
+  color: var(--cream);
+  font: 400 40px/1 var(--sans);
   cursor: pointer;
   padding: 16px;
   opacity: 0.8;
@@ -290,8 +307,10 @@
   position: absolute;
   top: 24px;
   left: 24px;
-  color: var(--white);
+  color: var(--cream);
+  font-family: var(--sans);
   font-size: 14px;
+  letter-spacing: 0.12em;
 }
 
 /* ---------- Events & Specials ---------- */
@@ -305,17 +324,19 @@
 }
 
 .event-title {
-  font-size: 17px;
+  font-family: var(--sans);
+  font-weight: 500;
+  font-size: 14px;
   line-height: 34px;
-  letter-spacing: 2px;
-  color: var(--blue);
+  letter-spacing: 0.18em;
+  color: var(--charcoal);
   margin-bottom: 6px;
 }
 
 .event-image {
   display: block;
   height: 145px;
-  background: #555 no-repeat center / cover;
+  background: var(--charcoal) no-repeat center / cover;
 }
 
 .event-image--dining { background-image: url("../images/out.jpg"); background-position: right center; }
@@ -323,9 +344,8 @@
 .event-image--brunch { background-image: url("../images/runchmenu.jpg"); }
 
 .event-caption {
-  font-size: 12px;
   line-height: 30px;
-  color: var(--black);
+  color: var(--text);
   margin-top: 6px;
 }
 
@@ -335,15 +355,7 @@
   margin: 25px auto 0;
 }
 
-.event-single .event-title {
-  letter-spacing: 1px;
-}
-
 /* ---------- Gift Cards ---------- */
-
-.giftcards .section-title {
-  letter-spacing: 2px;
-}
 
 .giftcard-row {
   display: flex;
@@ -353,10 +365,19 @@
   margin-top: 30px;
 }
 
+/* The card itself is an inline SVG: basil ground, cream logo */
 .giftcard-image {
   width: 405px;
   height: 258px;
-  background: url("../images/giftcard-meme.png") no-repeat 0 0 / contain;
+  border-radius: 14px;
+  box-shadow: 0 12px 30px rgba(43, 39, 36, 0.18);
+  overflow: hidden;
+}
+
+.giftcard-image svg {
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
 .giftcard-actions {
@@ -368,17 +389,20 @@
 }
 
 .giftcard-amount {
-  font-size: 16px;
+  font-family: var(--sans);
+  font-weight: 500;
+  font-size: 13px;
   line-height: 19px;
-  letter-spacing: 2px;
+  letter-spacing: 0.22em;
+  color: var(--accent);
 }
 
 .giftcard-note {
   max-width: 959px;
   margin: 41px auto 0;
-  font-size: 10px;
-  line-height: 17px;
-  color: #5e0d1a;
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--text);
 }
 
 /* ---------- Forms (party inquiry + mailing list) ---------- */
@@ -398,22 +422,25 @@
 
 .field label {
   display: block;
-  margin: 0 0 4px 4px;
-  font-size: 12px;
+  margin: 0 0 6px 2px;
+  font-family: var(--sans);
+  font-weight: 500;
+  font-size: 11px;
   line-height: 20px;
-  color: var(--black);
+  letter-spacing: 0.18em;
+  color: var(--charcoal);
 }
 
 .field input,
 .field textarea {
   width: 100%;
   padding: 10px;
-  border: 1px solid var(--blue);
-  border-radius: 5px;
-  background: var(--white);
-  font: 300 12px var(--font);
-  color: var(--black);
-  transition: box-shadow 1s ease-out;
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  background: #fff;
+  font: 400 15px var(--serif);
+  color: var(--charcoal);
+  transition: border-color 0.3s ease-out, box-shadow 0.3s ease-out;
 }
 
 .field textarea {
@@ -423,14 +450,14 @@
 
 .field input:hover,
 .field textarea:hover {
-  box-shadow: 0 0 4px rgba(29, 113, 184, 0.5);
-  transition-duration: 0s;
+  border-color: var(--accent);
 }
 
 .field input:focus,
 .field textarea:focus {
   outline: none;
-  box-shadow: 0 0 8px rgba(29, 113, 184, 0.5);
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(86, 96, 60, 0.2);
 }
 
 .form-submit {
@@ -439,18 +466,19 @@
   max-width: 200px;
   margin: 10px auto 0;
   padding: 0;
-  border: 1px solid var(--blue);
-  border-radius: 6px;
-  background: var(--blue);
-  font: 300 12px/34px var(--font);
-  color: var(--white);
+  border: 1px solid var(--accent);
+  border-radius: 2px;
+  background: var(--accent);
+  font: 500 13px/44px var(--sans);
+  letter-spacing: 0.16em;
+  color: var(--cream);
   cursor: pointer;
-  transition: background-color 0.6s ease-out;
+  transition: background-color 0.3s ease-out, border-color 0.3s ease-out;
 }
 
 .form-submit:hover {
-  background: var(--white);
-  color: var(--blue);
+  border-color: var(--charcoal);
+  background: var(--charcoal);
 }
 
 .form--mailing .form-row {
@@ -463,12 +491,6 @@
   width: 120px;
 }
 
-.form--mailing .form-submit:hover {
-  border-color: #bf1111;
-  background: #bf1111;
-  color: var(--white);
-}
-
 /* ---------- Contact ---------- */
 
 .contact-grid {
@@ -477,7 +499,7 @@
   gap: 30px;
   max-width: 808px;
   margin: 30px auto 0;
-  line-height: 20px;
+  line-height: 1.5;
 }
 
 .contact-grid a {
@@ -490,7 +512,7 @@
 }
 
 .contact-grid a:hover {
-  color: var(--blue);
+  color: var(--accent);
 }
 
 .contact-icon {
@@ -504,11 +526,14 @@
 .contact-icon--email { background-image: url("../images/envelope.png"); }
 
 .mailing-title {
-  margin-top: 34px;
-  font-size: 30px;
-  line-height: 36px;
-  letter-spacing: 4px;
-  color: var(--blue);
+  margin-top: 64px;
+  font-family: var(--serif);
+  font-weight: 500;
+  font-variation-settings: "opsz" 6;
+  font-size: 36px;
+  line-height: 1.1;
+  text-transform: lowercase;
+  color: var(--charcoal);
 }
 
 .map iframe {
@@ -532,13 +557,6 @@
 }
 
 @media (max-width: 768px) {
-  .hero-location {
-    width: auto;
-    margin: 10px 0 0;
-    text-align: center;
-    font-size: 20px;
-  }
-
   .hero-buttons,
   .reservations-row,
   .giftcard-row {
@@ -596,15 +614,7 @@
     grid-template-columns: 1fr;
   }
 
-  .section-title,
   .mailing-title {
-    font-size: 24px;
-  }
-
-  .btn,
-  .btn--solid {
-    min-width: 0;
-    width: 100%;
-    max-width: 288px;
+    font-size: 30px;
   }
 }

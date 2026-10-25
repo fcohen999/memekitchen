@@ -1,19 +1,29 @@
 /* ==========================================================================
-   Mémé Mediterranean — Hell's Kitchen
+   Mémé on 10 — Kitchen & Cocktails
    Shared styles for the homepage (index.html) and menu pages.
-   Colors, sizes and spacing are taken from the original site's stylesheets.
+   Colors and type follow the Brand Kit v2 (October 2026, Basil):
+     charcoal on paper, basil accent; cream on charcoal for reversed areas.
+     Bodoni Moda for headings and body text, Jost caps for labels and buttons.
    ========================================================================== */
 
 :root {
-  --blue: #1d71b8;
-  --blue-overlay: rgba(29, 113, 184, 0.73);
-  --blue-menu: rgba(29, 113, 184, 0.89);
-  --text: #5d5d5d;
-  --white: #fff;
-  --black: #000;
-  --cream: #edd7a8;
-  --font: "Montserrat", Arial, "Helvetica Neue", Helvetica, sans-serif;
-  --frame: 10px; /* white frame around the browser window on desktop */
+  /* Brand palette */
+  --charcoal: #2b2724;    /* primary ink: wordmark, type */
+  --basil: #56603c;       /* brand color: squiggles, rules, prices, buttons, links */
+  --terracotta: #b35a3e;  /* optional alternate accent */
+  --cream: #f3ede1;       /* reversed ink on dark grounds */
+  --paper: #fbf8f2;       /* page background */
+  --slate: #4d6a8a;       /* secondary (cocktail menu, alternate awning) */
+
+  --accent: var(--basil); /* change to var(--terracotta) for the alternate accent */
+  --text: #3f3833;        /* dark charcoal for running text (as on the menu) */
+  --rule: rgba(43, 39, 36, 0.18);
+  --charcoal-overlay: rgba(43, 39, 36, 0.55);
+  --charcoal-menu: rgba(43, 39, 36, 0.94);
+
+  --serif: "Bodoni Moda", Georgia, serif;
+  --sans: "Jost", "Helvetica Neue", Arial, sans-serif;
+  --frame: 10px; /* paper frame around the browser window on desktop */
 }
 
 /* ---------- Base ---------- */
@@ -30,20 +40,21 @@ html {
 
 body {
   margin: 0;
-  font-family: var(--font);
-  font-weight: 300;
-  font-size: 12px;
-  line-height: 1.6;
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
   color: var(--text);
-  background: var(--white);
+  background: var(--paper);
   overflow-x: hidden;
 }
 
 h1,
 h2,
+h3,
 p {
   margin: 0;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 img {
@@ -65,6 +76,13 @@ a {
   white-space: nowrap;
 }
 
+.brand-sprite {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
 .container {
   width: 100%;
   max-width: 1000px;
@@ -72,62 +90,112 @@ a {
   padding: 0 20px;
 }
 
-/* White frame around the window (desktop only, as on the original site) */
+/* Text link in running copy */
+.link {
+  color: var(--charcoal);
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
+  text-underline-offset: 3px;
+}
+
+.link:hover {
+  color: var(--accent);
+}
+
+.accent {
+  color: var(--accent);
+}
+
+/* Paper frame around the window (desktop only) */
 @media (min-width: 1025px) {
   body::after {
     content: "";
     position: fixed;
     inset: 0;
-    border: var(--frame) solid var(--white);
-    border-bottom-color: #f4f4e0;
+    border: var(--frame) solid var(--paper);
     pointer-events: none;
     z-index: 900;
   }
 }
 
-/* ---------- Section headings + ornament ---------- */
+/* ---------- Logo (inline SVG, so "on 10" and the tagline use the web fonts) ---------- */
 
-.section {
-  padding: 70px 0 76px;
-  text-align: center;
-  background: var(--white);
+.logo {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
 }
 
-.section--blue {
-  background: var(--blue);
-  color: var(--white);
+.logo-on10 {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: 64px;
+  font-variation-settings: "opsz" 6;
+  letter-spacing: 0;
+  text-transform: none; /* "on 10" is lowercase only, even inside uppercase areas */
+}
+
+.logo-tagline {
+  font-family: var(--sans);
+  font-size: 26px;
+  letter-spacing: 5.5px;
+}
+
+/* ---------- Section headings + squiggle ---------- */
+
+.section {
+  padding: 80px 0 86px;
+  text-align: center;
+  background: var(--paper);
+}
+
+.section--dark {
+  background: var(--charcoal);
+  color: var(--cream);
 }
 
 .section-title {
-  font-size: 30px;
-  line-height: 34px;
-  letter-spacing: 4px;
-  color: var(--blue);
+  font-family: var(--serif);
+  font-weight: 500;
+  font-variation-settings: "opsz" 6;
+  font-size: 44px;
+  line-height: 1.1;
+  text-transform: lowercase;
+  color: var(--charcoal);
 }
 
-.section--blue .section-title {
-  color: var(--white);
-  letter-spacing: 5px;
+.section--dark .section-title {
+  color: var(--cream);
 }
 
-/* The small "m" ornament under every heading */
+/* Small caps label above or beside a heading */
+.eyebrow {
+  font-family: var(--sans);
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.6;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+/* The hand-drawn squiggle under every heading */
 .ornament {
-  width: 104px;
-  height: 74px;
-  margin: 7px auto 0;
-  background: url("../images/rollbluem.png") no-repeat center / contain;
-  opacity: 0.27;
+  width: 96px;
+  height: 30px;
+  margin: 14px auto 0;
+  background: url("../images/brand/squiggle-basil.svg") no-repeat center / contain;
 }
 
-.ornament--white {
-  background-image: url("../images/rollwhitem.png");
-  opacity: 1;
+.ornament--cream {
+  background-image: url("../images/brand/squiggle-cream.svg");
 }
 
 .section-text {
-  max-width: 808px;
-  margin: 12px auto 0;
-  line-height: 23px;
+  max-width: 760px;
+  margin: 20px auto 0;
+  line-height: 1.6;
   color: var(--text);
 }
 
@@ -135,7 +203,7 @@ a {
 
 .photo-band {
   height: 700px;
-  background: #222 no-repeat center / cover;
+  background: var(--charcoal) no-repeat center / cover;
 }
 
 .photo-band--about { background-image: url("../images/hk_aboutuspara.jpg"); }
@@ -164,9 +232,9 @@ a {
   padding: 0 91px 0 0;
   border: 0;
   background: transparent url("../images/icons/burger.png") no-repeat right center;
-  font: 300 12px/64px var(--font);
-  letter-spacing: 1px;
-  color: var(--white);
+  font: 500 12px/64px var(--sans);
+  letter-spacing: 0.22em;
+  color: var(--cream);
   text-align: right;
   cursor: pointer;
 }
@@ -177,7 +245,6 @@ a {
 
 .site-nav.is-open .nav-toggle {
   background-image: url("../images/icons/burger.png");
-  color: var(--cream);
 }
 
 @media (min-resolution: 2dppx) {
@@ -200,24 +267,26 @@ a {
 
 .nav-list a {
   display: block;
-  padding: 19px 0 25px;
-  border-top: 1px solid var(--white);
-  background: var(--blue-menu);
-  font-size: 11px;
-  line-height: 11px;
-  letter-spacing: 1px;
+  padding: 19px 0 20px;
+  border-top: 1px solid rgba(243, 237, 225, 0.25);
+  background: var(--charcoal-menu);
+  font-family: var(--sans);
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 12px;
+  letter-spacing: 0.18em;
   text-align: center;
-  color: var(--white);
+  color: var(--cream);
   transition: background-color 0.3s ease-out, color 0.3s ease-out;
 }
 
 .nav-list li:last-child a {
-  border-bottom: 1px solid var(--white);
+  border-bottom: 1px solid rgba(243, 237, 225, 0.25);
 }
 
 .nav-list a:hover {
-  background: var(--white);
-  color: var(--blue);
+  background: var(--cream);
+  color: var(--accent);
 }
 
 /* ---------- Buttons ---------- */
@@ -225,34 +294,37 @@ a {
 .btn {
   display: inline-block;
   min-width: 252px;
-  padding: 0 20px;
-  border: 1px solid var(--blue);
-  border-radius: 6px;
-  background: rgba(0, 0, 0, 0.48);
-  font-size: 12px;
-  line-height: 40px;
+  padding: 0.95em 1.6em;
+  border: 1px solid var(--accent);
+  border-radius: 2px;
+  background: var(--accent);
+  font-family: var(--sans);
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 1.2;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
   text-align: center;
-  color: var(--white);
-  transition: background-color 0.3s ease-out, border-color 0.3s ease-out;
+  color: var(--cream);
+  cursor: pointer;
+  transition: background-color 0.3s ease-out, border-color 0.3s ease-out, color 0.3s ease-out;
 }
 
 .btn:hover {
-  border-color: var(--white);
-  background: var(--blue-overlay);
-  color: #0ff;
+  border-color: var(--charcoal);
+  background: var(--charcoal);
+  color: var(--cream);
+}
+
+/* On photos and dark grounds: hover to cream */
+.btn--on-dark:hover {
+  border-color: var(--cream);
+  background: var(--cream);
+  color: var(--charcoal);
 }
 
 .btn--solid {
   min-width: 288px;
-  background: var(--blue);
-  line-height: 41px;
-  transition-duration: 1s;
-}
-
-.btn--solid:hover {
-  border-color: var(--blue);
-  background: var(--white);
-  color: var(--blue);
 }
 
 /* ---------- Social icons ---------- */
@@ -264,8 +336,8 @@ a {
 }
 
 .social a {
-  opacity: 0.7;
-  transition: opacity 1s ease-out;
+  opacity: 0.75;
+  transition: opacity 0.4s ease-out;
 }
 
 .social a:hover {
@@ -281,33 +353,30 @@ a {
   gap: 56px;
 }
 
-.social--large a {
-  opacity: 0.75;
-}
-
 .social--large img {
-  width: 28px;
-  height: 28px;
+  width: 26px;
+  height: 26px;
 }
 
 /* ---------- Footer ---------- */
 
 .site-footer {
-  padding: 50px 20px 70px;
-  background: var(--blue);
+  padding: 60px 20px 70px;
+  background: var(--charcoal);
   text-align: center;
-  color: var(--white);
-  font-size: 11px;
-  line-height: 19px;
+  color: var(--cream);
+  font-family: var(--sans);
+  font-size: 12px;
+  line-height: 20px;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
 }
 
 .footer-logo {
   display: block;
-  width: 493px;
+  width: 360px;
   max-width: 100%;
   margin: 0 auto 30px;
-  opacity: 0.8;
 }
 
 .site-footer .social {
@@ -315,7 +384,7 @@ a {
 }
 
 .site-footer a:hover {
-  color: var(--black);
+  color: #c9cdb5; /* basil tint, readable on charcoal */
 }
 
 .footer-legal {
@@ -324,6 +393,7 @@ a {
   justify-content: center;
   flex-wrap: wrap;
   gap: 0 40px;
+  opacity: 0.75;
 }
 
 /* ---------- Back-to-top button ---------- */
@@ -336,12 +406,12 @@ a {
   width: 45px;
   height: 45px;
   border: 0;
-  border-radius: 5px;
-  background: var(--blue);
+  border-radius: 2px;
+  background: var(--accent);
   cursor: pointer;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 1s, visibility 1s;
+  transition: opacity 1s, visibility 1s, background-color 0.3s;
 }
 
 .back-to-top.is-visible {
@@ -355,15 +425,24 @@ a {
   width: 10px;
   height: 10px;
   margin-top: 5px;
-  border-top: 2px solid var(--white);
-  border-right: 2px solid var(--white);
+  border-top: 2px solid var(--cream);
+  border-right: 2px solid var(--cream);
   transform: rotate(-45deg);
 }
 
 .back-to-top:hover {
-  background: var(--white);
+  background: var(--charcoal);
 }
 
-.back-to-top:hover::after {
-  border-color: var(--blue);
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 36px;
+  }
+
+  .btn,
+  .btn--solid {
+    min-width: 0;
+    width: 100%;
+    max-width: 288px;
+  }
 }

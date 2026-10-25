@@ -1,4 +1,4 @@
-# Mémé Mediterranean — Hell's Kitchen website
+# Mémé on 10, Kitchen & Cocktails — Hell's Kitchen website
 
 A plain HTML/CSS/JS rebuild of the Hell's Kitchen page. No build step: open `index.html` in a browser, or upload the folder to any static web host.
 
@@ -13,7 +13,17 @@ A plain HTML/CSS/JS rebuild of the Hell's Kitchen page. No build step: open `ind
 | `css/home.css`, `css/menu.css` | Homepage and menu-page styles |
 | `js/main.js` | Nav menu, slideshow, gallery lightbox, back-to-top button |
 | `js/menu.js` | Draws the menu from the `menus/` files (no need to edit) |
-| `images/` | Photos, logo and icons |
+| `images/` | Photos and icons |
+| `images/brand/` | Logo, wordmark and squiggle SVGs from the brand kit |
+
+## Brand
+
+Styles follow the Mémé on 10 Brand Kit v2 (October 2026, Basil):
+
+- **Colors** (in `css/style.css`): charcoal `#2B2724` for type, basil `#56603C` for squiggles, prices, buttons and links, paper `#FBF8F2` background, cream `#F3EDE1` on charcoal. To switch the accent to terracotta, set `--accent: var(--terracotta);`.
+- **Type**: Bodoni Moda for headings (500, lowercase) and running text (400); Jost caps, tracked, for labels, dish names, buttons and the tagline.
+- **Logo**: drawn as inline SVG in each page (the `#wm` and `#sq` symbols at the top of the `<body>`) so "on 10" and the tagline use the web fonts. The files in `images/brand/` are the same marks for download and print.
+- **Menus**: prices are picked out of the menu text and shown in basil without a `$`. A single price at the end of a dish name moves to the right of the name.
 
 ## Editing a menu
 
