@@ -13,7 +13,6 @@
   --terracotta: #b35a3e;  /* optional alternate accent */
   --cream: #f3ede1;       /* reversed ink on dark grounds */
   --paper: #fbf8f2;       /* page background */
-  --slate: #4d6a8a;       /* secondary (cocktail menu, alternate awning) */
 
   --accent: var(--basil); /* change to var(--terracotta) for the alternate accent */
   --text: #3f3833;        /* dark charcoal for running text (as on the menu) */
